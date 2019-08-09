@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Users from './Users/Users';
-import User from './Users/User';
-import Search from './Users/Search';
+import Users from './Users/Users.jsx';
+import User from './Users/User.jsx';
+import Search from './Users/Search.jsx';
 
 class Routes extends Component {
     render() {

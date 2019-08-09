@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getSingleUser } from '../../redux/actions/actionCreators';
-import Spinner from '../Users/Spinner';
+import Spinner from '../Users/Spinner.jsx';
 
 class User extends Component {
 

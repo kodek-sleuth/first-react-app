@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchUsers } from '../../redux/actions/actionCreators';
-import UserItem from './UserItem';
-import Spinner from '../Users/Spinner';
+import UserItem from './UserItem.jsx';
+import Spinner from '../Users/Spinner.jsx';
 
 class Search extends Component {
     state = {

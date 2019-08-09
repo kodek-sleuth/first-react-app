@@ -3,13 +3,8 @@ const { join, resolve } = require('path');
 const path = require('path')
 
 module.exports = {
+  entry:  ['./src/index.js'],
   module: {
-    entry: "./src/index",
-    output: {
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/",
-      filename: "bundle.js"
-    },
     rules: [
       {
         test: /\.(js|jsx)$/,
