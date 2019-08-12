@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx}",
     "dev": "webpack-dev-server --open --config webpack.config.js",
-    "start": "node src/index.js",
+    "start": "babel-node src/index.js",
     "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
