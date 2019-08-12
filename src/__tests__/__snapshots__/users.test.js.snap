@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<User /> should return a user 1`] = `ShallowWrapper {}`;
+
+exports[`<Users /> should return all users on the page 1`] = `ShallowWrapper {}`;

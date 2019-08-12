@@ -4,7 +4,7 @@ import { getUsers } from '../../redux/actions/actionCreators';
 import UserItem from './UserItem.jsx';
 import Spinner from '../Users/Spinner.jsx';
 
-const Users = props => {
+export const Users = props => {
     useEffect(() => {
         props.getUsers();
     }, [])

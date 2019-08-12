@@ -4,12 +4,13 @@ import { searchUsers } from '../../redux/actions/actionCreators';
 import UserItem from './UserItem.jsx';
 import Spinner from '../Users/Spinner.jsx';
 
-class Search extends Component {
+export class Search extends Component {
     state = {
         text: ''
     }
 
     onChange = (e) => {
+        console.log(this.props);
         this.setState({ text: e.target.value })
     }
 

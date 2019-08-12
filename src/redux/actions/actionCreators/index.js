@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import axios from 'axios';
 import { GET_LOADING, GET_USERS, GET_USER } from '../actionTypes';
 

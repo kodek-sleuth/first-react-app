@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { getSingleUser } from '../../redux/actions/actionCreators';
 import Spinner from '../Users/Spinner.jsx';
 
-const User = props => {
+export const User = props => {
   useEffect(() => {
     const username = props.match.params.login;
     props.getSingleUser(username)
