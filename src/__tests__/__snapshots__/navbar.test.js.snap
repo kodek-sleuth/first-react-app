@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> should render the navbar 1`] = `
+<div
+  className="navbar"
+>
+  <h1>
+    Github Finder
+    <img
+      alt=""
+      className="githubIcon"
+      src="https://image.flaticon.com/icons/svg/270/270798.svg"
+    />
+     
+  </h1>
+  <div>
+    <ul>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/search"
+          onClick={[Function]}
+        >
+          Search
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -1,29 +1,30 @@
-import React, { Component } from 'react'; 
+import React, { useEffect } from 'react'; 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { getSingleUser } from '../../redux/actions/actionCreators';
 import Spinner from '../Users/Spinner.jsx';
 
-class User extends Component {
+const User = props => {
+  useEffect(() => {
+    const username = props.match.params.login;
+    props.getSingleUser(username)
+  }, [])
 
-  componentDidMount(){
-    const username = this.props.match.params.login;
-    this.props.getSingleUser(username)
+  const redirectToProfile = () => {
+    window.location = props.user.blog
   }
 
-  render() {
-    const { name, avatar_url, blog } = this.props.user;
-    if (this.props.loading){
-      return <Spinner />
-    }
-    return (
-     <div className="card">
-        <img src={avatar_url} alt="" className="avatar"/>
-        <h3>{name}</h3>
-        <Link to={blog}><button className="more">Profile</button></Link>
-     </div>
-    );
+  const { name, avatar_url } = props.user;
+  if (props.loading){
+    return <Spinner />
   }
+  return (
+    <div className="card">
+      <img src={avatar_url} alt="" className="avatar"/>
+      <h3>{name}</h3>
+      <button className="more" onClick={redirectToProfile}>Profile</button>
+    </div>
+  );
 }
 
 const mapStateToProps = state => ({

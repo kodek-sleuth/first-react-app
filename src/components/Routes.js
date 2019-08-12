@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
 import Users from './Users/Users.jsx';
 import User from './Users/User.jsx';
 import Search from './Users/Search.jsx';
@@ -17,7 +16,6 @@ class Routes extends Component {
                 <Route exact path='/' component={Users}/>
                 <Route exact path='/user/:login' component={User}/>
              </Switch>
-           <Footer />
          </div>
       </Router>
         )

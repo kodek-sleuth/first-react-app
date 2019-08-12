@@ -24,6 +24,17 @@ li
   margin-right: 10px;
 }
 
+a
+{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color: #007bff;
+}
+
 .githubIcon
 {
   width: 50px;
@@ -38,6 +49,7 @@ li
   grid-column-gap: 50px;
   grid-row-gap: 50px;
   margin-right: 200px;
+  margin-bottom: 50px;
 }
 
 .more
