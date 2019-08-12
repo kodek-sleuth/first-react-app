@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx}",
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
-    "prod": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
