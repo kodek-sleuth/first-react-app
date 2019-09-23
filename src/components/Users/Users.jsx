@@ -12,7 +12,6 @@ export const Users = props => {
     if (props.loading){
         return <Spinner />
     }
-
     return(
         <div className="container">
             {props.users.map(user => 

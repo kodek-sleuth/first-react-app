@@ -1,45 +1,79 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { join, resolve } = require('path');
-const path = require('path')
+const Dotenv = require('dotenv-webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
-  entry:  ['./src/index.js'],
+  entry: path.join(__dirname, './src/index.js'),
   output: {
-    path: path.resolve(__dirname, 'build/'),
+    path: path.join(__dirname, '/build'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'main.js',
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, '/build'),
+    historyApiFallback: true,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+    rules: [{
+      test: /(\.js|\.jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      },
-      {
-        test: /\.ico$/,
-        loader: 'file-loader'
-     },
-     {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
+    },
+    {
+      test: /\.html$/,
+      use: [
+        {
+          loader: 'html-loader',
+        },
+      ],
+    },
+    {
+      test: /(\.css|\.scss|\.sass)$/,
+      use: [{
+        loader: 'style-loader', 
+      }, {
+        loader: 'css-loader', 
+      }, {
+        loader: 'sass-loader', 
+      }],
+    },
+    {
+      test: /.(jpg|jpeg|png|gif|svg)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name]-[hash:8].[ext]',
+          },
+        },
+      ],
+    }],
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: resolve(__dirname, 'public', 'index.html')
-    })
+  node: {
+    dns: 'mock',
+    fs: 'empty',
+    path: true,
+    url: false
+  },
+  plugins: [ 
+    new Dotenv({
+      path: path.resolve(__dirname, './.env'),
+      safe: true,
+      systemvars: true,
+      silent: true,
+      defaults: false
+    }),
+    new CleanWebpackPlugin(), 
+    new HtmlWebpackPlugin({ 
+        template: './public/index.html',
+        filename: './index.html'
+    }) 
   ]
 };

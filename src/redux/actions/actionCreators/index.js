@@ -1,6 +1,9 @@
 import '@babel/polyfill';
 import axios from 'axios';
+import dotenv from 'dotenv';
 import { GET_LOADING, GET_USERS, GET_USER } from '../actionTypes';
+
+dotenv.config();
 
 const setLoading = (data) => dispatch => {
   dispatch({
