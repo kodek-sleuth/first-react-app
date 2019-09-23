@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx}",
+    "test": "jest -w 1",
+    "test:cov": "jest -w 1 \"-- --coverage\"",
     "dev": "webpack-dev-server --open --config webpack.config.js",
     "start": "serve -s build",
     "build": "webpack --mode production",
