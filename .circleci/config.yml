@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:6
+      - image: circleci/node:10
     steps:
       - checkout
       - restore_cache: # special step to restore the dependency cache
@@ -23,5 +23,5 @@ jobs:
           name: Run Test and Coverage
           command: |
             ./cc-test-reporter before-build
-            npm run test -- -u
+            npm run test:cov -- -u
             ./cc-test-reporter after-build --exit-code $?
